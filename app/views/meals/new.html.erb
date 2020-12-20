@@ -1,0 +1,23 @@
+<h1>Add a new recipe</h1>
+
+<%= form_with model: @meal do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <% @meal.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :recipe %>
+    <%= form.text_area :recipe %>
+    <% @meal.errors.full_messages_for(:recipe).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
