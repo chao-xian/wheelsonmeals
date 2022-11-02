@@ -5,3 +5,25 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+# Ingredients
+Ingredient.create(
+  [
+    {name: "mince"},
+    {name: "spaghetti"},
+    {name: "celery"},
+    {name: "onion"},
+    {name: "carrot"},
+    {name: "garlic"},
+    {name: "white wine"},
+    {name: "tomato puree"}
+  ]
+)
+
+spag_bol = Dish.create(
+  {name: "Spaghetti Bolognaise"}
+)
+
+Ingredient.find_each do |ingredient|
+  spag_bol.ingredients << ingredient
+end
